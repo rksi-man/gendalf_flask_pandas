@@ -1,19 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Подложка */
+        }
+        .content {
+            display: flex;
+        }
 
+        a.btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #6c757d; /* Цвет кнопки */
+            color: white; /* Цвет текста кнопки */
+            text-decoration: none;
+            border-radius: 5px; /* Скругление краев */
+        }
+    </style>
+</head>
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
-        </header>
+    <h1>{{name_book}}</h1>
+    <div class = "content">
+    {% for name in data_frame_dict %}
+        <div>
+            <a href="/sheet/{{name}}" class="btn">{{name}}</a>
+        </div>
+    {% endfor %}
     </div>
 </body>
-
 </html>
